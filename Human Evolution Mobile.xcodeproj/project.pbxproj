@@ -22,7 +22,7 @@
 		2C1EC76190C88CFCF96D45F8 /* Pods_Human_Evolution_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Human_Evolution_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		556984CBC8272446B84EFBD2 /* Pods-Human Evolution Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Human Evolution Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Human Evolution Mobile/Pods-Human Evolution Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		B141A0592568483C00F733CA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
-		B1FDDA642554921A0077512B /* Human Evolution Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Human Evolution Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1FDDA642554921A0077512B /* Pocket Human Evolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Human Evolution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FDDA672554921A0077512B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1FDDA692554921A0077512B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B1FDDA6B2554921A0077512B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		B1FDDA652554921A0077512B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1FDDA642554921A0077512B /* Human Evolution Mobile.app */,
+				B1FDDA642554921A0077512B /* Pocket Human Evolution.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,7 +117,7 @@
 			);
 			name = "Human Evolution Mobile";
 			productName = "Human Evolution Mobile";
-			productReference = B1FDDA642554921A0077512B /* Human Evolution Mobile.app */;
+			productReference = B1FDDA642554921A0077512B /* Pocket Human Evolution.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -388,7 +388,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shreyasagnihotri.Human-Evolution-Mobile";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pocket Human Evolution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -408,7 +408,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shreyasagnihotri.Human-Evolution-Mobile";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pocket Human Evolution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

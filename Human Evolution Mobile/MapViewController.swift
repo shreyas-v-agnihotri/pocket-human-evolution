@@ -24,8 +24,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
     var coachMarksViews: [UIView] = []
     let coachMarksMessages = [
         "Welcome to the Human Evolution Timeline! We're starting in the present day, but you can explore our evolutionary past up to 7 million years ago.",
-        "Use this slider to change the point in time represented by the map! The map will then refresh.",
-        "Early human species often coexisted. This label tells you how many different species of humans were thought to exist during the time period you selected.",
+        "Use this slider to change the point in time represented by the map. The map will then refresh.",
+        "Early human species often coexisted. This label tells you how many different species of early humans were thought to exist during the time period you selected.",
         "Each pin on the map represents a species of early human in a certain region of the world. Pinch and zoom around the map, selecting any pin to learn about a species. If you need, click this button to zoom the map back out. Let's get started!"
     ]
     

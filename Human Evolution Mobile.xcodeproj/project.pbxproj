@@ -379,18 +379,22 @@
 			baseConfigurationReference = 556984CBC8272446B84EFBD2 /* Pods-Human Evolution Mobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HW2D2HF4LQ;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = JQ28K6Y7JE;
 				INFOPLIST_FILE = "Human Evolution Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shreyasagnihotri.Human-Evolution-Mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dartmouth.Pocket-Human-Evolution";
 				PRODUCT_NAME = "Pocket Human Evolution";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.dartmouth.Pocket-Human-Evolution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -399,18 +403,22 @@
 			baseConfigurationReference = E3A93578F67779178BFAFB25 /* Pods-Human Evolution Mobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HW2D2HF4LQ;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = JQ28K6Y7JE;
 				INFOPLIST_FILE = "Human Evolution Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shreyasagnihotri.Human-Evolution-Mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dartmouth.Pocket-Human-Evolution";
 				PRODUCT_NAME = "Pocket Human Evolution";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.dartmouth.Pocket-Human-Evolution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

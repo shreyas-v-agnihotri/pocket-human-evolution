@@ -19,8 +19,7 @@ let species: [String: [String: Any]] = [
     "Homo erectus": [                                                                   // Species name
         "existedFrom": 7.55,                                                            // Decimal to 2 places, in millions of years ago
         "existedUntil": 3.00,                                                           // Decimal to 2 places, in millions of years ago
-        "latitude": 6.6111,                                                             // Latitude of map pin
-        "longitude": 20.9394,                                                           // Longitude of map pin
+        "pins": [(6.6111, 20.9394), (6.6111, 40.9394)],                                 // Array of (lat, long) coordinates for map pins
         "geography": "Eastern Africa (Middle Awash Valley, Ethiopia)",                  // Description of geographic range
         "brainSize": "600-800 cubic centimeters",                                       // Description of brain size
         "moreInfo": "Short paragraph description: diet, behaviors, notable facts",      // Short paragraph description
@@ -38,12 +37,10 @@ let species: [String: [String: Any]] = [
     "Homo sapiens": [
         "existedFrom": 3.55,
         "existedUntil": 1.00,
-        "discovered": 2000,
-        "latitude": 7.9,
-        "longitude": 21.8,
-        "geography": "Eastern Africa (Middle Awash Valley, Ethiopia)", // Description of geographic range
-        "brainSize": "600-800 cubic centimeters", // Description of brain size
-        "moreInfo": "Short paragraph description: diet, behaviors, notable facts", // Short paragraph description
+        "pins": [(7.9, 21.8)],
+        "geography": "Eastern Africa (Middle Awash Valley, Ethiopia)",
+        "brainSize": "600-800 cubic centimeters",
+        "moreInfo": "Short paragraph description: diet, behaviors, notable facts",
         "fossils": [
             Fossil(name: "KNMER-3733",
                    type: "Skull",
@@ -54,12 +51,10 @@ let species: [String: [String: Any]] = [
     "Homo blahblah": [
         "existedFrom": 2.55,
         "existedUntil": 0.00,
-        "discovered": 50,
-        "latitude": 5.4,
-        "longitude": 21.8,
-        "geography": "Eastern Africa (Middle Awash Valley, Ethiopia)", // Description of geographic range
-        "brainSize": "600-800 cubic centimeters", // Description of brain size
-        "moreInfo": "Short paragraph description: diet, behaviors, notable facts", // Short paragraph description
+        "pins": [(3.4, 21.8)],
+        "geography": "Eastern Africa (Middle Awash Valley, Ethiopia)",
+        "brainSize": "600-800 cubic centimeters",
+        "moreInfo": "Short paragraph description: diet, behaviors, notable facts",
         "fossils": [
             Fossil(name: "KNMER-3733",
                    type: "Skull",

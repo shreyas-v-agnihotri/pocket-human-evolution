@@ -25,13 +25,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
     let coachMarksMessages = [
         "Welcome to the Human Evolution Timeline! We're starting in the present day, but you can explore our evolutionary past up to 7 million years ago.",
         "Use this slider to change the point in time represented by the map. The map will then refresh.",
-        "Early human species often coexisted. This label tells you how many different species of early humans were thought to exist during the time period you selected.",
+        "Early human species often coexisted. This label tells you how many different species of early human were thought to exist during the time period you selected.",
         "Each pin on the map represents a species of early human in a certain region of the world. Pinch and zoom around the map, selecting any pin to learn about a species. If you need, click this button to zoom the map back out. Let's get started!"
     ]
     
     let monkeyPin = UIImage(named: "monkey-head-icon")?.scaled(newSize: CGSize(width: 37.5, height: 52))
     let africaEuropeAsiaZoom = GMSCameraPosition.camera(withLatitude: 10, longitude: 45, zoom: 1.0)
-    var activeMarkers: [String] = []
+    var activeMarkers: Set<String> = Set()
     var mapView: GMSMapView = GMSMapView.map(withFrame: .zero, camera: .init())
     
     override func viewDidLoad() {
@@ -117,13 +117,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
             
             if ((information["existedUntil"] as! Double) <= year && year <= (information["existedFrom"] as! Double)) {
                 // Creates a marker in the center of the map.
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: information["latitude"] as! CLLocationDegrees, longitude: information["longitude"] as! CLLocationDegrees)
-                marker.appearAnimation = lastActiveMarkers.contains(name) ? .none : .pop
-                marker.title = name
-                marker.icon = monkeyPin
-                marker.map = mapView
-                activeMarkers += [name]
+                for (latitude, longitude) in information["pins"] as! Array<(CLLocationDegrees, CLLocationDegrees)> {
+                    let marker = GMSMarker()
+                    marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                    marker.appearAnimation = lastActiveMarkers.contains(name) ? .none : .pop
+                    marker.title = name
+                    marker.icon = monkeyPin
+                    marker.map = mapView
+                }
+                activeMarkers.insert(name)
             }
         }
         

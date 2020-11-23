@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         GMSServices.provideAPIKey("AIzaSyBkNL52D_SofJRlU1_9RW-MGXOsqkLIcvU")
+        RunLoop.current.run(until: Date(timeIntervalSinceNow: 2.0))
         
         return true
     }

@@ -10,8 +10,9 @@ import UIKit
 import MapKit
 import GoogleMaps
 import Presentr
+import Instructions
 
-class MapViewController: UIViewController, GMSMapViewDelegate {
+class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControllerDataSource, CoachMarksControllerDelegate {
 
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var yearLabel: UILabel!
@@ -19,8 +20,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var reCenterButton: UIButton!
     @IBOutlet weak var speciesCountLabel: UILabel!
     
+    let coachMarksController = CoachMarksController()
+    var coachMarksViews: [UIView] = []
+    let coachMarksMessages = [
+        "Welcome to the Human Evolution Timeline! We're starting in the present day, but you can explore our evolutionary past up to 7 million years ago.",
+        "Use this slider to change the point in time represented by the map! The map will then refresh.",
+        "Early human species often coexisted. This label tells you how many different species of humans were thought to exist during the time period you selected.",
+        "Each pin on the map represents a species of early human in a certain region of the world. Pinch and zoom around the map, selecting any pin to learn about a species. If you need, click this button to zoom the map back out. Let's get started!"
+    ]
+    
     let monkeyPin = UIImage(named: "monkey-head-icon")?.scaled(newSize: CGSize(width: 37.5, height: 52))
-    let africaZoom = GMSCameraPosition.camera(withLatitude: 23.8859, longitude: 45.0792, zoom: 1.0)
+    let africaEuropeAsiaZoom = GMSCameraPosition.camera(withLatitude: 10, longitude: 45, zoom: 1.0)
     var activeMarkers: [String] = []
     var mapView: GMSMapView = GMSMapView.map(withFrame: .zero, camera: .init())
     
@@ -28,12 +38,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.coachMarksController.dataSource = self
+        self.coachMarksController.overlay.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.5)
+        coachMarksViews = [yearLabel, slider, speciesCountLabel, reCenterButton]
+        
         slider.minimumValue = 0
         slider.maximumValue = 7.00
         slider.setValue(0.0, animated: true)
         sliderDragged(self)
     
-        mapView = GMSMapView.map(withFrame: mapFrame.frame, camera: africaZoom)
+        mapView = GMSMapView.map(withFrame: mapFrame.frame, camera: africaEuropeAsiaZoom)
         mapView.mapType = .satellite
         mapView.delegate = self
         self.view.addSubview(mapView)
@@ -47,6 +61,41 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         self.view.bringSubviewToFront(speciesCountLabel)
                 
         plotPins(year: Double(exactly: slider.value)!)
+    }
+    
+    // MARK: Guided Tutorial Configuration
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.coachMarksController.start(in: .window(over: self))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        self.coachMarksController.stop(immediately: true)
+    }
+    
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
+        return coachMarksMessages.count
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
+        return coachMarksController.helper.makeCoachMark(for: coachMarksViews[index])
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: UIView & CoachMarkBodyView, arrowView: (UIView & CoachMarkArrowView)?) {
+        
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(
+            withArrow: true,
+            arrowOrientation: coachMark.arrowOrientation
+        )
+
+        coachViews.bodyView.hintLabel.text = coachMarksMessages[index]
+        coachViews.bodyView.nextLabel.text = (index == coachMarksMessages.count - 1) ? "Start" : "Next"
+
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
 
     @IBAction func sliderDragged(_ sender: Any) {
@@ -82,7 +131,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func reCenterMapTapped(_ sender: Any) {
-        mapView.animate(to: africaZoom)
+        mapView.animate(to: africaEuropeAsiaZoom)
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -106,28 +155,5 @@ private extension UIImage {
             self.draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
         }
         return image.withRenderingMode(self.renderingMode)
-    }
-    
-    func recolored(color: UIColor) -> UIImage? {
-        let maskImage = cgImage!
-
-        let width = size.width
-        let height = size.height
-        let bounds = CGRect(x: 0, y: 0, width: width, height: height)
-
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
-        let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)!
-
-        context.clip(to: bounds, mask: maskImage)
-        context.setFillColor(color.cgColor)
-        context.fill(bounds)
-
-        if let cgImage = context.makeImage() {
-            let coloredImage = UIImage(cgImage: cgImage)
-            return coloredImage
-        } else {
-            return nil
-        }
     }
 }

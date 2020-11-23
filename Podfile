@@ -8,5 +8,6 @@ target 'Human Evolution Mobile' do
   # Pods for Human Evolution Mobile
   pod 'GoogleMaps', '4.0.0'
   pod 'Presentr'
+  pod 'Instructions'
 
 end

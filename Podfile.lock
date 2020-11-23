@@ -4,21 +4,25 @@ PODS:
   - GoogleMaps/Base (4.0.0)
   - GoogleMaps/Maps (4.0.0):
     - GoogleMaps/Base
+  - Instructions (2.0.0)
   - Presentr (1.9)
 
 DEPENDENCIES:
   - GoogleMaps (= 4.0.0)
+  - Instructions
   - Presentr
 
 SPEC REPOS:
   trunk:
     - GoogleMaps
+    - Instructions
     - Presentr
 
 SPEC CHECKSUMS:
   GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
+  Instructions: debf9cedeaf8d095108fd35d2c54b97ccf769e65
   Presentr: 7078d7eb5d1661ebeaae60c9e42a1e534de1b993
 
-PODFILE CHECKSUM: 6bb8cbd6842820328f94f35d4b94f8c81d02437e
+PODFILE CHECKSUM: 3de8751fbc6e27b1632ea9b931e0aa3c3e903a1c
 
 COCOAPODS: 1.10.0

@@ -59,12 +59,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         self.coachMarksController.dataSource = self
         self.coachMarksController.overlay.backgroundColor = overlayBackgroundColor
         coachMarksViews = [yearLabel, slider, mapFrame, speciesCountLabel, speciesCountLabel, reCenterButton, helpButton]
-        
-        // Configure year slider
-        slider.minimumValue = 0
-        slider.maximumValue = 7.00
-        slider.setValue(0.0, animated: true)
-        sliderDragged(self)
     
         // Configure map
         mapView = GMSMapView.map(withFrame: mapFrame.frame, camera: africaEuropeAsiaZoom)
@@ -85,8 +79,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         self.view.bringSubviewToFront(helpButton)
         self.view.bringSubviewToFront(speciesCountLabel)
         
-        // Plot all map pins
-        plotPins(year: Double(exactly: slider.value)!)
+        // Configure year slider
+        slider.minimumValue = 0
+        slider.maximumValue = 7.00
+        slider.setValue(0.0, animated: true)
+        sliderDragged(self)
     }
     
     // Configure onboarding appearance
@@ -144,7 +141,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
     func plotPins(year: Double) {
         
         mapView.clear()
-        let lastActiveMarkers = activeMarkers   // Track which markers are currently displated
+        let lastActiveMarkers = activeMarkers   // Track which markers are currently displayed
         activeMarkers = []                      // Track which markers are being added
         
         for (name, information) in species {

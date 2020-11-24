@@ -17,9 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Configure Google Maps view
         GMSServices.provideAPIKey("AIzaSyBkNL52D_SofJRlU1_9RW-MGXOsqkLIcvU")
-        RunLoop.current.run(until: Date(timeIntervalSinceNow: 2.0))
-        
         return true
     }
 

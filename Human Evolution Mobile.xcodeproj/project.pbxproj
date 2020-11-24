@@ -90,8 +90,8 @@
 				B1FDDA6B2554921A0077512B /* MapViewController.swift */,
 				B141A0592568483C00F733CA /* CardTableViewController.swift */,
 				B1FDDA6D2554921A0077512B /* Main.storyboard */,
-				B1FDDA702554921F0077512B /* Assets.xcassets */,
 				B1FDDA722554921F0077512B /* LaunchScreen.storyboard */,
+				B1FDDA702554921F0077512B /* Assets.xcassets */,
 				B1FDDA752554921F0077512B /* Info.plist */,
 			);
 			path = "Human Evolution Mobile";

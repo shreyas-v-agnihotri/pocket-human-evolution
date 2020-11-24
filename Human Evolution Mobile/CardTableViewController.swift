@@ -20,21 +20,21 @@ class CardTableViewController: UITableViewController {
     @IBOutlet weak var moreInfoLabel: UILabel!
     
     var speciesName: String = "name"
-    var speciesDetails: [String: Any] = [:]
+    var speciesDetails: Species = Species(existedFrom: 1.0, existedUntil: 1.0, pins: [], geography: "", brainSize: "", moreInfo: "", fossils: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         speciesNameLabel.text = speciesName
-        existedFromLabel.text = "\(speciesDetails["existedFrom"] ?? 0)M"
-        existedUntilLabel.text = "\(speciesDetails["existedUntil"] ?? 0)M"
-        geographyLabel.text = speciesDetails["geography"] as? String
-        brainSizeLabel.text = speciesDetails["brainSize"] as? String
-        moreInfoLabel.text = speciesDetails["moreInfo"] as? String
+        existedFromLabel.text = "\(speciesDetails.existedFrom)M"
+        existedUntilLabel.text = "\(speciesDetails.existedUntil)M"
+        geographyLabel.text = speciesDetails.geography
+        brainSizeLabel.text = speciesDetails.brainSize
+        moreInfoLabel.text = speciesDetails.moreInfo
         
         var fossils = ""
         var count = 1
-        let keyFossils = speciesDetails["fossils"] as! [Fossil]
+        let keyFossils = speciesDetails.fossils
         for fossil in keyFossils {
             fossils += "\(fossil.name) • \(fossil.type), \(fossil.yearDiscovered)" + (count > 0 && count < keyFossils.count ? "\n" : "")
             count += 1

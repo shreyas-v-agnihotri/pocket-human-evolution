@@ -114,10 +114,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         activeMarkers = []
         
         for (name, information) in species {
-            
-            if ((information["existedUntil"] as! Double) <= year && year <= (information["existedFrom"] as! Double)) {
+            if (information.existedUntil <= year && year <= information.existedFrom) {
                 // Creates a marker in the center of the map.
-                for (latitude, longitude) in information["pins"] as! Array<(CLLocationDegrees, CLLocationDegrees)> {
+                for (latitude, longitude) in information.pins {
                     let marker = GMSMarker()
                     marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                     marker.appearAnimation = lastActiveMarkers.contains(name) ? .none : .pop
@@ -129,6 +128,22 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
             }
         }
         
+//        for (name, information) in species {
+//
+//            if ((information["existedUntil"] as! Double) <= year && year <= (information["existedFrom"] as! Double)) {
+//                // Creates a marker in the center of the map.
+//                for (latitude, longitude) in information["pins"] as! Array<(CLLocationDegrees, CLLocationDegrees)> {
+//                    let marker = GMSMarker()
+//                    marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//                    marker.appearAnimation = lastActiveMarkers.contains(name) ? .none : .pop
+//                    marker.title = name
+//                    marker.icon = monkeyPin
+//                    marker.map = mapView
+//                }
+//                activeMarkers.insert(name)
+//            }
+//        }
+//
         speciesCountLabel.text = "\(activeMarkers.count) active species"
     }
     

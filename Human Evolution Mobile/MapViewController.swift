@@ -27,11 +27,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
     let coachMarksController = CoachMarksController()
     var coachMarksViews: [UIView] = []
     let coachMarksMessages = [
-        "Welcome to the Human Evolution Timeline! We're starting in the present day, but you can explore our evolutionary past up to 7 million years ago.",
-        "Use this slider to change the point in time represented by the map. This will trigger the map to refresh.",
-        "This is the map. Each pin represents a species of early human in a certain region of the world during the time period you selected. Select any pin to learn about that species.",
+        "Welcome to the Human Evolution Timeline! We're starting in the present day, but you can explore our evolutionary past up to 7 million years ago, when our lineage began.",
+        "Use this slider to move to the point in time you want to explore. This will update the species displayed on the map.",
+        "This is the map. Each pin represents a species of early human in that general region of the world during the time period you selected. Tap any pin to learn about that species and where it lived.",
         "Early human species often coexisted. This label tells you how many different species of early human are currently shown on the map. Pins from the same species have the same color, to help you tell them apart.",
-        "Much of human evolution took place in Africa, but we eventually expanded throughout the globe. Pinch and zoom around the map to explore the locations of all species, then tap this button if you need to zoom back out.",
+        "Be careful: for some periods of time, this label will show 0 active species. This just means we have yet to find the fossils necessary to classify the species alive at that time. Paleontology is a constantly-evolving field, and new discoveries will help us learn more about our ancestors.",
+        "Much of human evolution took place in Africa, but we eventually expanded throughout the globe. Pan and zoom around the map to explore the locations of all species, then tap this button if you need to zoom back out.",
         "Tap this button to restart this tutorial at any time. Let's get started!"
     ]
     let mapIndex = 2
@@ -44,7 +45,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         UIImage(named: "purple-pin")?.scaled(newSize: CGSize(width: 37.5, height: 52)),
         UIImage(named: "yellow-pin")?.scaled(newSize: CGSize(width: 37.5, height: 52))
     ]
-    let africaEuropeAsiaZoom = GMSCameraPosition.camera(withLatitude: 10, longitude: 45, zoom: 1.0)
+    let africaEuropeAsiaZoom = GMSCameraPosition.camera(withLatitude: 10, longitude: 55, zoom: 1.0)
     var activeMarkers: Set<String> = Set()
     var mapView: GMSMapView = GMSMapView.map(withFrame: .zero, camera: .init())
     
@@ -57,7 +58,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         // Configure onboarding coach marks
         self.coachMarksController.dataSource = self
         self.coachMarksController.overlay.backgroundColor = overlayBackgroundColor
-        coachMarksViews = [yearLabel, slider, mapFrame, speciesCountLabel, reCenterButton, helpButton]
+        coachMarksViews = [yearLabel, slider, mapFrame, speciesCountLabel, speciesCountLabel, reCenterButton, helpButton]
         
         // Configure year slider
         slider.minimumValue = 0
@@ -88,8 +89,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         plotPins(year: Double(exactly: slider.value)!)
     }
     
-    // MARK: Guided Tutorial Configuration
-    
+    // Configure onboarding appearance
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -100,6 +100,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         }
     }
     
+    // Configure onboarding disappearance
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 

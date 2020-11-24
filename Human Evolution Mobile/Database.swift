@@ -173,7 +173,7 @@ let species: [String: Species] = [
         pins: [(-30, 24)],
         geography: "Southern Africa",
         brainSize: "~450 cubic centimeters",
-        moreInfo: "While anatomically similar to Australopithecus afarensis - existing at the same time in eastern Africa - Au. Africanus was likely a better climber, had a rounder skull, and had smaller teeth. It was the first human ancestor discovered in Africa, in 1924, so knowledge of this species framed the way human evolution was understood for much of the early 20th century.",
+        moreInfo: "While anatomically similar to Australopithecus afarensis \u{2014} existing at the same time in eastern Africa \u{2014} Australopithecus africanus was likely a better climber, had a rounder skull, and had smaller teeth. It was the first human ancestor discovered in Africa, in 1924, so knowledge of this species framed the way human evolution was understood for much of the early 20th century.",
         fossils: [
             Fossil(
                 name: "Taung Child",
@@ -448,7 +448,7 @@ let species: [String: Species] = [
         pins: [(8, 22), (38, 43), (49,13), (42, 80), (41, -100), (-16, -58), (-25, 133)],
         geography: "Everywhere",
         brainSize: "~1350 cubic centimeters",
-        moreInfo: "The species we all belong to - modern humankind - dates to 200,000 years ago in Africa. The first evidence of Homo sapiens outside of Africa is about 100,000 years ago, and everywhere else in Europe and Asia by 40,000 years ago. Our species is defined by a lighter build of the skeleton compared to earlier humans, with large brain housed in a high-vaulted skull with a near-vertical forehead.",
+        moreInfo: "The species we all belong to \u{2014} modern humankind \u{2014} dates to 200,000 years ago in Africa. The first evidence of Homo sapiens outside of Africa is about 100,000 years ago, and everywhere else in Europe and Asia by 40,000 years ago. Our species is defined by a lighter build of the skeleton compared to earlier humans, with a large brain housed in a high-vaulted skull with a near-vertical forehead.",
         fossils: [
             Fossil(
                 name: "Herto remains",

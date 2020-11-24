@@ -13,7 +13,7 @@
         <scene sceneID="k4B-Xp-MUR">
             <objects>
                 <viewController id="Im2-Ie-KNP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="15m-nx-E8H">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="15m-nx-E8H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -56,9 +56,15 @@
                                     <constraint firstAttribute="height" constant="128" id="SwV-Lh-YPC"/>
                                     <constraint firstAttribute="width" constant="128" id="f2h-d3-hOJ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHy-Ih-gTn">
-                                <rect key="frame" x="20" y="667" width="374" height="175"/>
+                                <rect key="frame" x="20" y="662.5" width="374" height="179.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>

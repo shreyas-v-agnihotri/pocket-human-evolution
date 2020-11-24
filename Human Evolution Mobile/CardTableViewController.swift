@@ -31,7 +31,7 @@ class CardTableViewController: UITableViewController {
         speciesImageView.image = UIImage(named: speciesDetails.imageName)
         speciesNameLabel.text = speciesName
         existedFromLabel.text = "~\(speciesDetails.existedFrom)M"
-        existedUntilLabel.text = "~\(speciesDetails.existedUntil)M"
+        existedUntilLabel.text = (speciesDetails.existedUntil != 0.0 ? "~" : "") + "\(speciesDetails.existedUntil)M"
         geographyLabel.text = speciesDetails.geography
         brainSizeLabel.text = speciesDetails.brainSize
         moreInfoLabel.text = speciesDetails.moreInfo

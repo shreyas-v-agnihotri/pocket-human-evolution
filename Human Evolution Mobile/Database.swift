@@ -131,7 +131,7 @@ let species: [String: Species] = [
         pins: [(0, 37.5)],
         geography: "Eastern Africa (modern Kenya, Ethiopia, and Tanzania)",
         brainSize: "365-500 cubic centimeters",
-        moreInfo: "From remains of over 300 individuals, anthropologists have documented that this species was bipedal, survived for more than 900,000 years, had a larger brain than its known predecessors, had small canine teeth, and had a much more rapid development schedule than modern humans. Adaptations for living in the trees and on the ground likely helped this species survive for so long",
+        moreInfo: "From remains of over 300 individuals, anthropologists have documented that this species was bipedal, survived for more than 900,000 years, had a larger brain than its known predecessors, had small canine teeth, and had a much more rapid development schedule than modern humans. Adaptations for living in the trees and on the ground likely helped this species survive for so long.",
         fossils: [
             Fossil(
                 name: "Lucy",
@@ -209,7 +209,7 @@ let species: [String: Species] = [
         pins: [(12, 37.5)],
         geography: "Eastern Africa (modern Ethiopia)",
         brainSize: "~450 cubic centimeters",
-        moreInfo: " This species strongly resembles Australopithecus afarensis, and is found in approximately the same geographic region, but appears close to half a million years after Lucy’s kind went extinct. Two notable aspects are that it had a longer femur than Australopithecus afarensis, suggesting better walking capability, and was discovered near butchered antelope bones, evidence of stone tool use.",
+        moreInfo: "This species strongly resembles Australopithecus afarensis, and is found in approximately the same geographic region, but appears close to half a million years after Lucy’s kind went extinct. Two notable aspects are that it had a longer femur than Australopithecus afarensis, suggesting better walking capability, and was discovered near butchered antelope bones, evidence of stone tool use.",
         fossils: [
             Fossil(
                 name: "BOU-VP-12/1",
@@ -251,7 +251,7 @@ let species: [String: Species] = [
         pins: [(-2, 35.5)],
         geography: "Eastern Africa",
         brainSize: "~450 cubic centimeters",
-        moreInfo: " Consistent with the rest of the genus Paranthropus, Paranthropus boisei has a large sagittal crest and is otherwise well-adapted for powerful chewing. It also has teeth that are even larger the Paranthropus robustus, has wide cheekbones that give it a flat face, and fed primarily in a grassland environment. It existed at the same time as Homo habilis, an entirely different genus, in Eastern Africa.",
+        moreInfo: "Consistent with the rest of the genus Paranthropus, Paranthropus boisei has a large sagittal crest and is otherwise well-adapted for powerful chewing. It also has teeth that are even larger the Paranthropus robustus, has wide cheekbones that give it a flat face, and fed primarily in a grassland environment. It existed at the same time as Homo habilis, an entirely different genus, in Eastern Africa.",
         fossils: [
             Fossil(
                 name: "Nutcracker Man (OH 5)",

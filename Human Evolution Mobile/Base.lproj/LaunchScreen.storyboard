@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,68 +17,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desilva" translatesAutoresizingMaskIntoConstraints="NO" id="ANc-99-nhK">
-                                <rect key="frame" x="0.0" y="308" width="414" height="280"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ANc-99-nhK" secondAttribute="height" multiplier="189:128" id="E4n-hA-Gg7"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A project for" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5B-rA-E4S">
-                                <rect key="frame" x="159.5" y="151" width="95" height="21"/>
+                                <rect key="frame" x="159.5" y="207.5" width="95" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ANTH 041: Human Evolution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFp-RC-5tf">
-                                <rect key="frame" x="82" y="187" width="250" height="24"/>
+                                <rect key="frame" x="82.5" y="243.5" width="249" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fall 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0E6-1F-1pW">
-                                <rect key="frame" x="169.5" y="216" width="75" height="22"/>
+                                <rect key="frame" x="170" y="272.5" width="74" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thf-33-BmQ">
-                                <rect key="frame" x="165" y="658" width="84" height="21"/>
+                                <rect key="frame" x="165" y="601.5" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shreyas Agnihotri &amp; Michael Nachman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjn-vt-KGg">
-                                <rect key="frame" x="40.5" y="694" width="333" height="24"/>
+                                <rect key="frame" x="40" y="637.5" width="334" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with thanks to Prof. Jeremy DeSilva" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMu-xZ-xwo">
-                                <rect key="frame" x="64.5" y="723" width="285" height="22"/>
+                                <rect key="frame" x="66" y="666.5" width="282" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dartmouth" translatesAutoresizingMaskIntoConstraints="NO" id="Eed-L6-NQh">
+                                <rect key="frame" x="50" y="364.5" width="314" height="167"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Eed-L6-NQh" secondAttribute="height" multiplier="15:8" id="qPq-Gg-grW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Pjn-vt-KGg" firstAttribute="top" secondItem="thf-33-BmQ" secondAttribute="bottom" constant="15" id="0Yg-OM-DNC"/>
-                            <constraint firstItem="ANc-99-nhK" firstAttribute="top" secondItem="0E6-1F-1pW" secondAttribute="bottom" constant="70" id="4eI-rY-f4k"/>
+                            <constraint firstItem="Eed-L6-NQh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2c1-SK-AJY"/>
                             <constraint firstItem="0E6-1F-1pW" firstAttribute="top" secondItem="jFp-RC-5tf" secondAttribute="bottom" constant="5" id="5Iw-n6-aYt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ANc-99-nhK" secondAttribute="trailing" id="7Bm-5E-vgp"/>
                             <constraint firstItem="xMu-xZ-xwo" firstAttribute="top" secondItem="Pjn-vt-KGg" secondAttribute="bottom" constant="5" id="7tU-ka-UbW"/>
                             <constraint firstItem="0E6-1F-1pW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FNX-eH-FBE"/>
                             <constraint firstItem="xMu-xZ-xwo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JkI-TG-sXM"/>
                             <constraint firstItem="jFp-RC-5tf" firstAttribute="top" secondItem="h5B-rA-E4S" secondAttribute="bottom" constant="15" id="JqB-U7-BZv"/>
-                            <constraint firstItem="ANc-99-nhK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W5X-mT-Leu"/>
-                            <constraint firstItem="thf-33-BmQ" firstAttribute="top" secondItem="ANc-99-nhK" secondAttribute="bottom" constant="70" id="ZSa-3U-zWG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eed-L6-NQh" secondAttribute="trailing" constant="50" id="Phv-Bi-yEQ"/>
+                            <constraint firstItem="thf-33-BmQ" firstAttribute="top" secondItem="Eed-L6-NQh" secondAttribute="bottom" constant="70" id="R2W-co-krK"/>
+                            <constraint firstItem="Eed-L6-NQh" firstAttribute="top" secondItem="0E6-1F-1pW" secondAttribute="bottom" constant="70" id="afd-Xq-q9d"/>
                             <constraint firstItem="h5B-rA-E4S" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lAT-Cx-2Ee"/>
                             <constraint firstItem="jFp-RC-5tf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="n8B-PC-cqa"/>
                             <constraint firstItem="Pjn-vt-KGg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nHr-qL-ggB"/>
-                            <constraint firstItem="ANc-99-nhK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="o7T-Tq-FUB"/>
                             <constraint firstItem="thf-33-BmQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ogv-Ze-ZGx"/>
+                            <constraint firstItem="Eed-L6-NQh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="rD6-dh-MBc"/>
+                            <constraint firstItem="Eed-L6-NQh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="sIb-Be-0Bn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,6 +88,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="desilva" width="250" height="166.5"/>
+        <image name="dartmouth" width="405.5" height="307"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

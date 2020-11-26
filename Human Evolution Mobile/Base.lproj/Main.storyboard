@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmZ-xI-Pag">
-                                <rect key="frame" x="112" y="539" width="190" height="40"/>
+                                <rect key="frame" x="112" y="504" width="190" height="40"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                 <state key="normal" title="Open the Timeline"/>
                                 <connections>
@@ -26,52 +27,52 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pocket Human Evolution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRJ-RC-2O6">
-                                <rect key="frame" x="10" y="257" width="394" height="40"/>
+                                <rect key="frame" x="10" y="252" width="394" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fku-4q-RSG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Across Time and Geography" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQ1-OE-5Mi">
-                                <rect key="frame" x="10" y="297" width="394" height="40"/>
+                                <rect key="frame" x="10" y="287" width="394" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WPj-lt-yzA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03v-FR-bYd">
-                                <rect key="frame" x="20" y="367" width="374" height="122"/>
+                                <rect key="frame" x="20" y="347" width="374" height="122"/>
                                 <string key="text">This app contains 21 species representing 7 million years of the human evolutionary tree. Explore the timeline below to learn when and where these human ancestors lived. Then, tap any of the pins on the map to learn more about a species' brain size, behaviors, and fossil record.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skull" translatesAutoresizingMaskIntoConstraints="NO" id="xOP-3V-oT6">
-                                <rect key="frame" x="143" y="99" width="128" height="128"/>
+                                <rect key="frame" x="167" y="152" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="SwV-Lh-YPC"/>
-                                    <constraint firstAttribute="width" constant="128" id="f2h-d3-hOJ"/>
+                                    <constraint firstAttribute="height" constant="80" id="SwV-Lh-YPC"/>
+                                    <constraint firstAttribute="width" constant="80" id="f2h-d3-hOJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
+                                        <integer key="value" value="18"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHy-Ih-gTn">
-                                <rect key="frame" x="20" y="662.5" width="374" height="179.5"/>
+                                <rect key="frame" x="20" y="661" width="374" height="181"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">All information and images drawn from
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -81,8 +82,8 @@
 Cg
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="12"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" metaFont="cellTitle"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -90,14 +91,14 @@ Cg
                                         <string key="content">The Smithsonian National Museum of Natural History
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="https://humanorigins.si.edu/">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system"/>
                                             <url key="NSLink" string="https://humanorigins.si.edu/"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -108,7 +109,7 @@ Cg
 Cg
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             <integer key="NSUnderline" value="1"/>
@@ -119,7 +120,7 @@ Cg
 Cg
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system" size="6"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -128,14 +129,14 @@ Cg
                                         <string key="content">The Australian Museum
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="https://australian.museum/learn/science/human-evolution/">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system"/>
                                             <url key="NSLink" string="https://australian.museum/"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -146,7 +147,7 @@ Cg
 Cg
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -156,7 +157,7 @@ Cg
 Cg
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system" size="6"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -165,7 +166,7 @@ Cg
                                         <string key="content">PBS NOVA
 https://www.pbs.org/wgbh/nova/hobbit/tree-nf.html</string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -175,7 +176,7 @@ https://www.pbs.org/wgbh/nova/hobbit/tree-nf.html</string>
 Cg
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             <integer key="NSUnderline" value="1"/>
@@ -186,14 +187,14 @@ Cg
 Cg
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system" size="6"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="ANTH 041 at Dartmouth College, Fall 2020">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -211,17 +212,17 @@ Cg
                             <constraint firstItem="QnF-RQ-xea" firstAttribute="trailing" secondItem="03v-FR-bYd" secondAttribute="trailing" constant="20" id="H5I-xX-4fK"/>
                             <constraint firstItem="FmZ-xI-Pag" firstAttribute="centerX" secondItem="15m-nx-E8H" secondAttribute="centerX" id="TgY-WJ-UBG"/>
                             <constraint firstItem="QnF-RQ-xea" firstAttribute="bottom" secondItem="zHy-Ih-gTn" secondAttribute="bottom" constant="20" id="W0K-ZI-bgN"/>
-                            <constraint firstItem="03v-FR-bYd" firstAttribute="top" secondItem="sQ1-OE-5Mi" secondAttribute="bottom" constant="30" id="XoH-4L-23C"/>
+                            <constraint firstItem="03v-FR-bYd" firstAttribute="top" secondItem="sQ1-OE-5Mi" secondAttribute="bottom" constant="20" id="XoH-4L-23C"/>
                             <constraint firstItem="xOP-3V-oT6" firstAttribute="centerX" secondItem="15m-nx-E8H" secondAttribute="centerX" id="faD-Gv-D6L"/>
-                            <constraint firstItem="03v-FR-bYd" firstAttribute="centerY" secondItem="15m-nx-E8H" secondAttribute="centerY" constant="-20" id="gkc-bX-kdq"/>
+                            <constraint firstItem="03v-FR-bYd" firstAttribute="centerY" secondItem="15m-nx-E8H" secondAttribute="centerY" constant="-40" id="gkc-bX-kdq"/>
                             <constraint firstItem="03v-FR-bYd" firstAttribute="leading" secondItem="QnF-RQ-xea" secondAttribute="leading" constant="20" id="iKQ-4D-97j"/>
                             <constraint firstItem="tRJ-RC-2O6" firstAttribute="leading" secondItem="QnF-RQ-xea" secondAttribute="leading" constant="10" id="jYK-gR-VVt"/>
                             <constraint firstItem="QnF-RQ-xea" firstAttribute="trailing" secondItem="tRJ-RC-2O6" secondAttribute="trailing" constant="10" id="lpx-7T-106"/>
                             <constraint firstItem="zHy-Ih-gTn" firstAttribute="leading" secondItem="QnF-RQ-xea" secondAttribute="leading" constant="20" id="m4j-6Y-hwl"/>
-                            <constraint firstItem="FmZ-xI-Pag" firstAttribute="top" secondItem="03v-FR-bYd" secondAttribute="bottom" constant="50" id="my7-Ty-uaa"/>
+                            <constraint firstItem="FmZ-xI-Pag" firstAttribute="top" secondItem="03v-FR-bYd" secondAttribute="bottom" constant="35" id="my7-Ty-uaa"/>
                             <constraint firstItem="QnF-RQ-xea" firstAttribute="trailing" secondItem="zHy-Ih-gTn" secondAttribute="trailing" constant="20" id="pNf-zE-jiW"/>
-                            <constraint firstItem="tRJ-RC-2O6" firstAttribute="top" secondItem="xOP-3V-oT6" secondAttribute="bottom" constant="30" id="szz-i1-wMO"/>
-                            <constraint firstItem="sQ1-OE-5Mi" firstAttribute="top" secondItem="tRJ-RC-2O6" secondAttribute="bottom" id="zW0-Mc-Lcf"/>
+                            <constraint firstItem="tRJ-RC-2O6" firstAttribute="top" secondItem="xOP-3V-oT6" secondAttribute="bottom" constant="20" id="szz-i1-wMO"/>
+                            <constraint firstItem="sQ1-OE-5Mi" firstAttribute="top" secondItem="tRJ-RC-2O6" secondAttribute="bottom" constant="-5" id="zW0-Mc-Lcf"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -295,6 +296,34 @@ Cg
                                     <action selector="sliderDragged:" destination="BYZ-38-t0r" eventType="valueChanged" id="FUv-09-K1H"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zue-PV-PnI" userLabel="Plus Button">
+                                <rect key="frame" x="366" y="104" width="23" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="0wt-de-QMI"/>
+                                    <constraint firstAttribute="width" constant="23" id="k7m-oH-cn4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="plusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nfq-rc-Rn4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lw3-ec-76g" userLabel="Minus Button">
+                                <rect key="frame" x="25" y="104" width="23" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="AsJ-zA-nSB"/>
+                                    <constraint firstAttribute="height" constant="23" id="SYO-fV-Bfs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="minus" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="minusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gef-gh-vmW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -306,13 +335,17 @@ Cg
                             <constraint firstItem="fbc-X2-T6h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="O9R-Se-ulD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TuB-O1-e73" secondAttribute="bottom" constant="40" id="ReI-NW-RA1"/>
                             <constraint firstItem="TuB-O1-e73" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SBy-Hq-oD0"/>
+                            <constraint firstItem="zue-PV-PnI" firstAttribute="centerY" secondItem="uo1-AR-16p" secondAttribute="centerY" id="SJs-Xv-nX1"/>
                             <constraint firstAttribute="bottom" secondItem="VA4-I7-cht" secondAttribute="bottom" id="aMJ-7q-xhV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zue-PV-PnI" secondAttribute="trailing" constant="25" id="cKz-ib-SLF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VA4-I7-cht" secondAttribute="trailing" id="hvK-UE-xwv"/>
                             <constraint firstItem="uo1-AR-16p" firstAttribute="top" secondItem="fbc-X2-T6h" secondAttribute="bottom" constant="10" id="kA7-jb-ILE"/>
                             <constraint firstItem="VA4-I7-cht" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lzk-ZM-4iT"/>
+                            <constraint firstItem="lw3-ec-76g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="m5p-wX-tx7"/>
                             <constraint firstItem="Qou-PP-gQc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pbw-8a-LAJ"/>
                             <constraint firstItem="fbc-X2-T6h" firstAttribute="top" secondItem="OqD-gf-UHb" secondAttribute="bottom" constant="10" id="pg9-qx-H4h"/>
                             <constraint firstItem="uo1-AR-16p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rXy-dG-BRh"/>
+                            <constraint firstItem="uo1-AR-16p" firstAttribute="centerY" secondItem="lw3-ec-76g" secondAttribute="centerY" id="s2b-Ek-A6p"/>
                             <constraint firstItem="OqD-gf-UHb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="v57-8c-kwY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fbc-X2-T6h" secondAttribute="trailing" constant="20" id="wdM-0o-j5E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dXk-I4-pHb" secondAttribute="bottom" constant="40" id="zgg-kT-hwE"/>
@@ -321,6 +354,8 @@ Cg
                     <connections>
                         <outlet property="helpButton" destination="TuB-O1-e73" id="1JN-dp-wkf"/>
                         <outlet property="mapFrame" destination="VA4-I7-cht" id="aud-I6-ctA"/>
+                        <outlet property="minusButton" destination="lw3-ec-76g" id="lue-Xw-Rzz"/>
+                        <outlet property="plusButton" destination="zue-PV-PnI" id="345-ew-Lgf"/>
                         <outlet property="reCenterButton" destination="dXk-I4-pHb" id="CGc-Ey-TMW"/>
                         <outlet property="slider" destination="fbc-X2-T6h" id="NeY-5b-utM"/>
                         <outlet property="speciesCountLabel" destination="Qou-PP-gQc" id="nbh-aR-6xV"/>
@@ -660,11 +695,16 @@ Cg
         <image name="brain" width="128" height="128"/>
         <image name="lightbulb" catalog="system" width="113" height="128"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="skull" width="341" height="341"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">

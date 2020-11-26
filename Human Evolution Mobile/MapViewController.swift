@@ -22,6 +22,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
     @IBOutlet weak var reCenterButton: UIButton!
     @IBOutlet weak var speciesCountLabel: UILabel!
     @IBOutlet weak var helpButton: UIButton!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
     
     // Onboarding
     let coachMarksController = CoachMarksController()
@@ -29,22 +31,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
     let coachMarksMessages = [
         "Welcome to the Human Evolution Timeline! We're starting in the present day, but you can explore our evolutionary past up to 7 million years ago, when our lineage began.",
         "Use this slider to move to the point in time you want to explore. This will update the species displayed on the map.",
+        "If you prefer, you can up the slider value by 0.05 million years at a time...",
+        "or decrease by 0.05 million years at a time!",
         "This is the map. Each pin represents a species of early human in that general region of the world during the time period you selected. Tap any pin to learn about that species and where it lived.",
-        "Early human species often coexisted. This label tells you how many different species of early human are currently shown on the map. Pins from the same species have the same color, to help you tell them apart.",
-        "Be careful: for some periods of time, this label will show 0 active species. This just means we have yet to find the fossils necessary to classify the species alive at that time. Paleontology is a constantly-evolving field, and new discoveries will help us learn more about our ancestors.",
-        "Much of human evolution took place in Africa, but we eventually expanded throughout the globe. Pan and zoom around the map to explore the locations of all species, then tap this button if you need to zoom back out.",
+        "Early human species often coexisted. This label tells you how many different species of early human are currently shown on the map. Pins from the same species during a given time period have the same color, to help you tell them apart.",
+        "Be careful: for some periods of time, this label will show 0 active species. This just means we have yet to reach a consensus or find the fossils necessary to classify the species alive at that time. Paleontology is a constantly-evolving field, and new discoveries will help us learn more about our ancestors.",
+        "Much of human evolution took place in Africa, but we eventually expanded throughout the globe. Pan and zoom around the map to explore the locations of all species, then tap this button if you need to zoom back to Africa and Eurasia.",
         "Tap this button to restart this tutorial at any time. Let's get started!"
     ]
-    let mapIndex = 2
+    let mapIndex = 4
     
     // Map
-    let pins = [
-        UIImage(named: "red-pin")?.scaled(newSize: CGSize(width: 37.5, height: 52)),
-        UIImage(named: "blue-pin")?.scaled(newSize: CGSize(width: 37.5, height: 52)),
-        UIImage(named: "green-pin")?.scaled(newSize: CGSize(width: 37.5, height: 52)),
-        UIImage(named: "purple-pin")?.scaled(newSize: CGSize(width: 37.5, height: 52)),
-        UIImage(named: "yellow-pin")?.scaled(newSize: CGSize(width: 37.5, height: 52))
-    ]
     let africaEuropeAsiaZoom = GMSCameraPosition.camera(withLatitude: 10, longitude: 55, zoom: 1.0)
     var activeMarkers: Set<String> = Set()
     var mapView: GMSMapView = GMSMapView.map(withFrame: .zero, camera: .init())
@@ -58,7 +55,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         // Configure onboarding coach marks
         self.coachMarksController.dataSource = self
         self.coachMarksController.overlay.backgroundColor = overlayBackgroundColor
-        coachMarksViews = [yearLabel, slider, mapFrame, speciesCountLabel, speciesCountLabel, reCenterButton, helpButton]
+        coachMarksViews = [yearLabel, slider, plusButton, minusButton, mapFrame, speciesCountLabel, speciesCountLabel, reCenterButton, helpButton]
     
         // Configure map
         mapView = GMSMapView.map(withFrame: mapFrame.frame, camera: africaEuropeAsiaZoom)
@@ -137,6 +134,26 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         plotPins(year: Double(exactly: slider.value)!)
     }
     
+    // Zoom map back to original view if button tapped
+    @IBAction func reCenterMapTapped(_ sender: Any) {
+        mapView.animate(to: africaEuropeAsiaZoom)
+    }
+    
+    // Display onboarding if button tapped
+    @IBAction func helpButtonTapped(_ sender: Any) {
+        self.coachMarksController.start(in: .window(over: self))
+    }
+    
+    @IBAction func plusButtonTapped(_ sender: Any) {
+        slider.setValue(slider.value + 0.05, animated: true)
+        sliderDragged(self)
+    }
+    
+    @IBAction func minusButtonTapped(_ sender: Any) {
+        slider.setValue(slider.value - 0.05, animated: true)
+        sliderDragged(self)
+    }
+    
     // Plot all map pins for a given year
     func plotPins(year: Double) {
         
@@ -144,14 +161,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         let lastActiveMarkers = activeMarkers   // Track which markers are currently displayed
         activeMarkers = []                      // Track which markers are being added
         
-        for (name, information) in species {
+        for (speciesKey, information) in species {
+            let name = information.scientificName
             if speciesDidExist(year: year, information: information) {
                 for (latitude, longitude) in information.pins {
                     let marker = GMSMarker()
                     marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                     marker.appearAnimation = lastActiveMarkers.contains(name) ? .none : .pop    // Animate new markers
-                    marker.title = name
-                    marker.icon = pins[activeMarkers.count]     // Display each species as a different-colored pin
+                    marker.title = speciesKey
+                    marker.icon = information.pinImage     // Display each species as a different-colored pin
                     marker.map = mapView
                 }
                 activeMarkers.insert(name)
@@ -172,16 +190,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         return inBottomRange && inTopRange
     }
     
-    // Zoom map back to original view if button tapped
-    @IBAction func reCenterMapTapped(_ sender: Any) {
-        mapView.animate(to: africaEuropeAsiaZoom)
-    }
-    
-    // Display onboarding if button tapped
-    @IBAction func helpButtonTapped(_ sender: Any) {
-        self.coachMarksController.start(in: .window(over: self))
-    }
-    
     // Display species card if pin is tapped
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
 
@@ -189,15 +197,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
         presenter.backgroundColor = overlayBackgroundColor
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "CardTableViewController") as! CardTableViewController
         
-        controller.speciesName = marker.title!
-        controller.speciesDetails = species[marker.title!]!
+        controller.species = species[marker.title!]!
         customPresentViewController(presenter, viewController: controller, animated: true, completion: nil)
         return true
     }
 }
 
 // Custom add-ons to UIImage
-private extension UIImage {
+extension UIImage {
     
     // Resize image
     func scaled(newSize: CGSize) -> UIImage {

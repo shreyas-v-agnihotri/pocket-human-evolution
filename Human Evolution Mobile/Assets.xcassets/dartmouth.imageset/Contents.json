@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "desilva.jpg",
+      "filename" : "dartmouth-logo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "desilva@2x.jpg",
+      "filename" : "dartmouth-logo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "desilva@3x.jpg",
+      "filename" : "dartmouth-logo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

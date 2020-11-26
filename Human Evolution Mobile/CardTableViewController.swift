@@ -21,30 +21,29 @@ class CardTableViewController: UITableViewController {
     @IBOutlet weak var moreInfoLabel: UILabel!
     
     // Species information
-    var speciesName: String = "name"
-    var speciesDetails: Species = Species(imageName: "", existedFrom: 1.0, existedUntil: 1.0, pins: [], geography: "", brainSize: "", moreInfo: "", fossils: [])
+    var species: Species = Species(scientificName: "", imageName: "", existedFrom: 1.0, existedUntil: 1.0, pins: [], pinImage: UIImage(named: "red-pin")!, geography: "", brainSize: "", moreInfo: "", fossils: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Fill UI elements with species details
-        speciesImageView.image = UIImage(named: speciesDetails.imageName)
-        speciesNameLabel.text = speciesName
-        existedFromLabel.text = "~\(speciesDetails.existedFrom)M"
-        existedUntilLabel.text = (speciesDetails.existedUntil != 0.0 ? "~" : "") + "\(speciesDetails.existedUntil)M"
-        geographyLabel.text = speciesDetails.geography
-        brainSizeLabel.text = speciesDetails.brainSize
-        moreInfoLabel.text = speciesDetails.moreInfo
+        speciesImageView.image = UIImage(named: species.imageName)
+        speciesNameLabel.text = species.scientificName
+        existedFromLabel.text = "~\(species.existedFrom)M"
+        existedUntilLabel.text = species.scientificName != "Homo sapiens" ? "~\(species.existedUntil)M" : "0"
+        geographyLabel.text = species.geography
+        brainSizeLabel.text = species.brainSize
+        moreInfoLabel.text = species.moreInfo
         
         // Fill fossils label with species' fossils and links to external sites
         var fossils = ""
         var count = 1
-        for fossil in speciesDetails.fossils {  // Add text for each fossil
-            fossils += "\(fossil.name) • \(fossil.type), \(fossil.yearDiscovered)" + (count > 0 && count < speciesDetails.fossils.count ? "\n" : "")
+        for fossil in species.fossils {  // Add text for each fossil
+            fossils += "\(fossil.name) • \(fossil.type), \(fossil.yearDiscovered)" + (count > 0 && count < species.fossils.count ? "\n" : "")
             count += 1
         }
         let allFossils = NSMutableAttributedString(string: fossils, attributes: [.font: UIFont.systemFont(ofSize: 16.0)])
-        for fossil in speciesDetails.fossils {  // Add links for each fossil
+        for fossil in species.fossils {  // Add links for each fossil
             allFossils.setAsLink(textToFind: fossil.name, linkURL: fossil.link)
         }
         self.keyFossilsTextView.attributedText = allFossils

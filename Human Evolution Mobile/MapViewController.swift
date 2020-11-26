@@ -31,7 +31,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
     let coachMarksMessages = [
         "Welcome to the Human Evolution Timeline! We're starting in the present day, but you can explore our evolutionary past up to 7 million years ago, when our lineage began.",
         "Use this slider to move to the point in time you want to explore. This will update the species displayed on the map.",
-        "If you prefer, you can up the slider value by 0.05 million years at a time...",
+        "If you prefer, you can increase the slider value by 0.05 million years at a time...",
         "or decrease by 0.05 million years at a time!",
         "This is the map. Each pin represents a species of early human in that general region of the world during the time period you selected. Tap any pin to learn about that species and where it lived.",
         "Early human species often coexisted. This label tells you how many different species of early human are currently shown on the map. Pins from the same species during a given time period have the same color, to help you tell them apart.",

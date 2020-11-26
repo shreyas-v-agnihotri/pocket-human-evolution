@@ -29,7 +29,7 @@ class CardTableViewController: UITableViewController {
         // Fill UI elements with species details
         speciesImageView.image = UIImage(named: species.imageName)
         speciesNameLabel.text = species.scientificName
-        existedFromLabel.text = "~\(species.existedFrom)M"
+        existedFromLabel.text = species.scientificName != "Homo sapiens" ? "~\(species.existedFrom)M" : "~0.3M"
         existedUntilLabel.text = species.scientificName != "Homo sapiens" ? "~\(species.existedUntil)M" : "0"
         geographyLabel.text = species.geography
         brainSizeLabel.text = species.brainSize

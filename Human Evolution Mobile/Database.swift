@@ -118,7 +118,7 @@ let humanSpecies: [String: Species] = [
         pinImage: image(mapPin: .purple),
         geography: "Eastern Africa (modern Ethiopia)",
         brainSize: "300-350 cubic centimeters",
-        moreInfo: "From a partial skeleton of its skull, teeth, pelvis, hands and feet, we know that this species was adapted to life in the trees, but was likely bipedal on the ground. It lived in a wooded environment, contradicting the theory that bipedalism developed in an open savanna.",
+        moreInfo: "From a partial skeleton nicknamed \"Ardi,\" we know that this species was adapted to life in the trees, but was likely bipedal on the ground. It lived in a wooded environment, contradicting the theory that bipedalism developed in an open savanna.",
         fossils: [
             Fossil(
                 name: "Ardi",

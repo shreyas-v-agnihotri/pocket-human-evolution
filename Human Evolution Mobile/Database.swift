@@ -46,7 +46,7 @@ func image(mapPin: MapPin) -> UIImage {
 }
 
 // Database of all early human species represented by the app
-let species: [String: Species] = [
+let humanSpecies: [String: Species] = [
     
     "Sahelanthropus tchadensis": Species(
         scientificName: "Sahelanthropus tchadensis",

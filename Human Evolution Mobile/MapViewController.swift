@@ -45,6 +45,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CoachMarksControl
     let africaEuropeAsiaZoom = GMSCameraPosition.camera(withLatitude: 10, longitude: 55, zoom: 1.0)
     var activeMarkers: Set<String> = Set()
     var mapView: GMSMapView = GMSMapView.map(withFrame: .zero, camera: .init())
+    let species = humanSpecies
     
     // UI
     let overlayBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)

@@ -25,7 +25,7 @@ class CardTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         // Fill UI elements with species details
         speciesImageView.image = UIImage(named: species.imageName)
         speciesNameLabel.text = species.scientificName
@@ -33,8 +33,15 @@ class CardTableViewController: UITableViewController {
         existedUntilLabel.text = species.scientificName != "Homo sapiens" ? "~\(species.existedUntil)M" : "0"
         geographyLabel.text = species.geography
         brainSizeLabel.text = species.brainSize
-        moreInfoLabel.text = species.moreInfo
         
+        // Italicize all species names
+        speciesNameLabel.font = speciesNameLabel.font.with(traits: .traitItalic)
+        let moreInfo = NSMutableAttributedString(string: species.moreInfo, attributes: [.font: UIFont.systemFont(ofSize: 16.0)])
+        for species in humanSpecies.values {
+            moreInfo.italicize(textToFind: species.scientificName)
+        }
+        moreInfoLabel.attributedText = moreInfo
+                
         // Fill fossils label with species' fossils and links to external sites
         var fossils = ""
         var count = 1
@@ -67,5 +74,25 @@ extension NSMutableAttributedString {
         if foundRange.location != NSNotFound {
             self.setAttributes([.link: linkURL, .font: UIFont.systemFont(ofSize: 16.0)], range: foundRange)
         }
+    }
+    
+    // Find text and hyperlink to provided URL
+    public func italicize(textToFind: String) {
+
+        let foundRange = self.mutableString.range(of: textToFind)
+        if foundRange.location != NSNotFound {
+            self.setAttributes([.font: UIFont.systemFont(ofSize: 16.0).with(traits: .traitItalic)], range: foundRange)
+        }
+    }
+}
+
+// Custom add-ons to UIFont
+extension UIFont {
+    func with(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
+        guard let descriptor = self.fontDescriptor.withSymbolicTraits(traits) else {
+            return self
+        } // guard
+        
+        return UIFont(descriptor: descriptor, size: 0)
     }
 }

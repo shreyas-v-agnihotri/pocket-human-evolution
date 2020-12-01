@@ -41,8 +41,10 @@ class CardTableViewController: UITableViewController {
         speciesNameLabel.font = speciesNameLabel.font.with(traits: .traitItalic)
         let moreInfo = NSMutableAttributedString(string: species.moreInfo, attributes: [.font: font])
         for species in humanSpecies.values {
+            moreInfo.italicize(textToFind: species.scientificName.components(separatedBy: " ").first!)
             moreInfo.italicize(textToFind: species.scientificName)
         }
+        
         moreInfoLabel.attributedText = moreInfo
                 
         // Fill fossils label with species' fossils and links to external sites
@@ -67,6 +69,19 @@ class CardTableViewController: UITableViewController {
     }
 }
 
+// Custom add-ons to String
+extension String {
+    
+    // Return all ranges where substring is found
+    func ranges(of substring: String, options: CompareOptions = [], locale: Locale? = nil) -> [Range<Index>] {
+        var ranges: [Range<Index>] = []
+        while let range = range(of: substring, options: options, range: (ranges.last?.upperBound ?? self.startIndex)..<self.endIndex, locale: locale) {
+            ranges.append(range)
+        }
+        return ranges
+    }
+}
+
 // Custom add-ons to NSMutableAttributedString
 extension NSMutableAttributedString {
 
@@ -79,22 +94,26 @@ extension NSMutableAttributedString {
         }
     }
     
-    // Find text and hyperlink to provided URL
+    // Find text and italicize
     public func italicize(textToFind: String) {
 
-        let foundRange = self.mutableString.range(of: textToFind)
-        if foundRange.location != NSNotFound {
-            self.setAttributes([.font: UIFont.systemFont(ofSize: 16.0).with(traits: .traitItalic)], range: foundRange)
+        let ranges = self.string.ranges(of: textToFind)
+        for foundRange in ranges {
+            if !foundRange.isEmpty {
+                self.setAttributes([.font: UIFont.systemFont(ofSize: 16.0).with(traits: .traitItalic)], range: NSRange(foundRange, in: self.string))
+            }
         }
     }
 }
 
 // Custom add-ons to UIFont
 extension UIFont {
+    
+    // Return font with traits applied
     func with(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
         guard let descriptor = self.fontDescriptor.withSymbolicTraits(traits) else {
             return self
-        } // guard
+        }
         
         return UIFont(descriptor: descriptor, size: 0)
     }

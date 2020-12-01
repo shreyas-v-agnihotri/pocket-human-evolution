@@ -22,6 +22,9 @@ class CardTableViewController: UITableViewController {
     
     // Species information
     var species: Species = Species(scientificName: "", imageName: "", existedFrom: 1.0, existedUntil: 1.0, pins: [], pinImage: UIImage(named: "red-pin")!, geography: "", brainSize: "", moreInfo: "", fossils: [])
+    
+    // UI
+    let font = UIFont.systemFont(ofSize: 16.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,30 +39,30 @@ class CardTableViewController: UITableViewController {
         
         // Italicize all species names
         speciesNameLabel.font = speciesNameLabel.font.with(traits: .traitItalic)
-        let moreInfo = NSMutableAttributedString(string: species.moreInfo, attributes: [.font: UIFont.systemFont(ofSize: 16.0)])
+        let moreInfo = NSMutableAttributedString(string: species.moreInfo, attributes: [.font: font])
         for species in humanSpecies.values {
             moreInfo.italicize(textToFind: species.scientificName)
         }
         moreInfoLabel.attributedText = moreInfo
                 
         // Fill fossils label with species' fossils and links to external sites
-        var fossils = ""
+        let fossils = NSMutableAttributedString(string: "", attributes: [.font: font])
         var count = 1
         for fossil in species.fossils {  // Add text for each fossil
-            fossils += "\(fossil.name) • \(fossil.type), \(fossil.yearDiscovered)" + (count > 0 && count < species.fossils.count ? "\n" : "")
+            let fossilDescription = "\(fossil.name) • \(fossil.type), \(fossil.yearDiscovered)" + (count > 0 && count < species.fossils.count ? "\n" : "")
+            fossils.append(NSMutableAttributedString(string: fossilDescription, attributes: [.font: font]))
+            fossils.setAsLink(textToFind: fossil.name, linkURL: fossil.link)
             count += 1
         }
-        let allFossils = NSMutableAttributedString(string: fossils, attributes: [.font: UIFont.systemFont(ofSize: 16.0)])
-        for fossil in species.fossils {  // Add links for each fossil
-            allFossils.setAsLink(textToFind: fossil.name, linkURL: fossil.link)
-        }
-        self.keyFossilsTextView.attributedText = allFossils
+        
+        // Set how links should function: blue, underlined, and tappable
+        self.keyFossilsTextView.attributedText = fossils
         self.keyFossilsTextView.isUserInteractionEnabled = true
         self.keyFossilsTextView.isEditable = false
-        self.keyFossilsTextView.linkTextAttributes = [         // Set how links should appear: blue and underlined
+        self.keyFossilsTextView.linkTextAttributes = [
             .foregroundColor: UIColor.systemBlue,
             .underlineStyle: NSUnderlineStyle.single.rawValue,
-            .font: UIFont.systemFont(ofSize: 16.0)
+            .font: font
         ]
     }
 }
